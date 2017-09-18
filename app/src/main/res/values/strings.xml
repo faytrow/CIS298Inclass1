@@ -1,10 +1,25 @@
 <resources>
     <string name="app_name">CIS298Inclass1</string>
-    <string name="questions_text">
-        Constantinople is the largest city in Turkey
-    </string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
+    <string name="next_button">Next</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
+
+    <string name="question_oceans">
+        Are there 6 oceans?
+    </string>
+    <string name="question_mideast">
+        Is the mideast in the Western Hemisphere?
+    </string>
+    <string name="question_africa">
+        Africa is in between North and South America?
+    </string>
+    <string name="question_americas">
+        America\'s largest country is Canada?
+    </string>
+    <string name="question_asia">
+        Asia is the largest continent?
+    </string>
+
 </resources>
