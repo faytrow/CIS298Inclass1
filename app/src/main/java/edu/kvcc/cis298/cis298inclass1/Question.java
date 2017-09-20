@@ -29,5 +29,4 @@ public class Question {
     public void setAnswerTrue(boolean answerIsTrue) {
         mAnswerTrue = answerIsTrue;
     }
-
 }
