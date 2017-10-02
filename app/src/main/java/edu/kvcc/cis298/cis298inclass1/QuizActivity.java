@@ -1,5 +1,6 @@
 package edu.kvcc.cis298.cis298inclass1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,10 +16,11 @@ public class QuizActivity extends AppCompatActivity {
 
     //Key for the key - > bundle
     //Call the bundle to save information between screen rotations.
-    private static final String KEY_INDEX = "index"
+    private static final String KEY_INDEX = "index";
 
     private Button mTrueButton;
     private Button mFalseButton;
+    private Button mCheatButton;
     private Button mNextButton;
     private TextView mQuestionTextView;
 
@@ -69,6 +71,26 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkAnswer(false);
+            }
+        });
+
+        mCheatButton = (Button) findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Start cheat activity
+                //Create a new Intent to get the activity started.
+                //Intents are objects that hold all of the data needed
+                //to start up a new activity. We then call startActivity
+                //with the intent as a parameter. The intent is used by the OS
+                //to determine what activity to start up.
+                //Activities are started by the OS. Not by the app.
+                //The Intent constuctor takes 2 params.
+                //1) Instance of a class that is initiating the new activity
+                //2) The name of the new activity to start.
+                boolean answerIsTrue =  mQuestionBank[mCurrentIndex].isAnswerTrue();
+                Intent i = CheatActivity.newIntent(QuizActivity.this, answerIsTrue);
+                startActivity(i);
             }
         });
 
